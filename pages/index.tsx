@@ -1,18 +1,20 @@
 import type { GetServerSideProps, NextPage } from "next";
+import { useState } from "react";
 import BlogPosts from "../components/BlogPosts";
 import CurrenciesList from "../components/CurrenciesList";
 import Filters from "../components/Filters";
 import GetInTouch from "../components/GetInTouch";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import ModalContact from "../components/ModalContact";
 import Table from "../components/Table";
 
 export interface IServerSideProps {
   tableData: {
     exchange: string;
-    price: string;
-    volume_AUD: string;
-    volume_BTC: string;
+    price: number;
+    volume_AUD: number;
+    volume_BTC: number;
     features: string[];
   }[];
   blogPosts: {
@@ -22,6 +24,8 @@ export interface IServerSideProps {
 }
 
 const Home: NextPage<IServerSideProps> = ({ tableData, blogPosts }) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="container">
       <div className="app-header">
@@ -31,7 +35,8 @@ const Home: NextPage<IServerSideProps> = ({ tableData, blogPosts }) => {
         <CurrenciesList />
         <Table data={tableData} />
         <BlogPosts blogPosts={blogPosts} />
-        <GetInTouch />
+        <GetInTouch setShowModal={setShowModal} />
+        {showModal && <ModalContact setShowModal={setShowModal} />}
       </div>
     </div>
   );
@@ -43,9 +48,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const tableData = [
     {
       exchange: "TimeX",
-      price: "14,721.55 AUD",
-      volume_AUD: "1,727,333.17",
-      volume_BTC: "121.281",
+      price: 14721.55,
+      volume_AUD: 1427333.17,
+      volume_BTC: 121.281,
       features: [
         "Instant Verification",
         "Two-factor Authentication",
@@ -55,23 +60,23 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
     {
       exchange: "Independent Reserve",
-      price: "14,680.01 AUD",
-      volume_AUD: "1,727,333.17",
-      volume_BTC: "121.281",
+      price: 14680.01,
+      volume_AUD: 1227333.17,
+      volume_BTC: 121.281,
       features: ["Instant Verification", "Two-factor Authentication"],
     },
     {
       exchange: "BTC markets",
-      price: "14,680.01 AUD",
-      volume_AUD: "1,727,333.17",
-      volume_BTC: "121.281",
+      price: 14580.01,
+      volume_AUD: 1797333.17,
+      volume_BTC: 121.281,
       features: ["Affiliate Program"],
     },
     {
       exchange: "CoinJar",
-      price: "14,680.01 AUD",
-      volume_AUD: "1,727,333.17",
-      volume_BTC: "121.281",
+      price: 14300.01,
+      volume_AUD: 1724333.17,
+      volume_BTC: 121.281,
       features: [
         "Instant Verification",
         "Two-factor Authentication",
@@ -80,9 +85,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
     {
       exchange: "CoinSpot",
-      price: "14,680.01 AUD",
-      volume_AUD: "1,727,333.17",
-      volume_BTC: "121.281",
+      price: 14680.01,
+      volume_AUD: 1727331.17,
+      volume_BTC: 121.281,
       features: [
         "Instant Verification",
         "Two-factor Authentication",
@@ -91,9 +96,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
     {
       exchange: "ACX Exchange",
-      price: "14,680.01 AUD",
-      volume_AUD: "1,727,333.17",
-      volume_BTC: "121.281",
+      price: 14680.01,
+      volume_AUD: 1727333.17,
+      volume_BTC: 121.281,
       features: [
         "Instant Verification",
         "Two-factor Authentication",
@@ -102,9 +107,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
     {
       exchange: "Swyftx",
-      price: "14,680.01 AUD",
-      volume_AUD: "1,727,333.17",
-      volume_BTC: "121.281",
+      price: 14680.01,
+      volume_AUD: 1728333.17,
+      volume_BTC: 121.281,
       features: [
         "Instant Verification",
         "Two-factor Authentication",

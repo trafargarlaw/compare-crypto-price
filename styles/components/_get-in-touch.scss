@@ -31,7 +31,7 @@
       align-self: end;
       margin-bottom: 40px;
       transform: translate(0px, 0);
-      animation: bounce 1s infinite;
+      animation: bounce 2s infinite;
 
       & img {
         width: clamp(7.1875rem, 1.1161rem + 12.6488vw, 12.5rem);
@@ -40,7 +40,7 @@
 
     &_shadow {
       transform: translate(0px, 0px);
-      animation: bounce-shadow 1s infinite;
+      animation: bounce-shadow 2s infinite;
 
       & img {
         width: clamp(7.5625rem, 1.2054rem + 13.244vw, 13.125rem);
@@ -53,11 +53,35 @@
   0% {
     transform: translate(0px, 0px);
   }
+  10% {
+    transform: translate(0px, 100px);
+  }
+  20% {
+    transform: translate(0px, 20px);
+  }
+  30% {
+    transform: translate(0px, 100px);
+  }
+  40% {
+    transform: translate(0px, 40px);
+  }
   50% {
-    transform: translate(0px, 75px);
+    transform: translate(0px, 100px);
+  }
+  60% {
+    transform: translate(0px, 60px);
+  }
+  70% {
+    transform: translate(0px, 100px);
+  }
+  80% {
+    transform: translate(0px, 80px);
+  }
+  90% {
+    transform: translate(0px, 100px);
   }
   100% {
-    transform: translate(0px, 0px);
+    transform: translate(0px, 100px);
   }
 }
 
@@ -65,10 +89,34 @@
   0% {
     transform: translate(0px, 0px);
   }
+  10% {
+    transform: translate(80px, 0px);
+  }
+  20% {
+    transform: translate(20px, 0px);
+  }
+  30% {
+    transform: translate(80px, 0px);
+  }
+  40% {
+    transform: translate(40px, 0px);
+  }
   50% {
-    transform: translate(75px, 0px);
+    transform: translate(80px, 0px);
+  }
+  60% {
+    transform: translate(60px, 0px);
+  }
+  70% {
+    transform: translate(80px, 0px);
+  }
+  80% {
+    transform: translate(70px, 0px);
+  }
+  90% {
+    transform: translate(80px, 0px);
   }
   100% {
-    transform: translate(0px, 0px);
+    transform: translate(80px, 0px);
   }
 }
