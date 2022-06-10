@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import ButtonCurrencyToggle from "./ButtonCurrencyToggle";
 
-const Filters = () => {
-  const [filters, setFilters] = useState([
-    "Two-factor Authentication",
-    "Instant Verification",
-    "Accept fiat currency",
-    "Affiliate Program",
-  ]);
+interface FiltersProps {
+  filters: string[];
+  selectedFilters: string[];
+  setSelectedFilters: Dispatch<SetStateAction<string[]>>;
+}
 
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-
+const Filters: React.FC<FiltersProps> = ({
+  filters,
+  selectedFilters,
+  setSelectedFilters,
+}) => {
   return (
     <div className="filters-container">
       <div>

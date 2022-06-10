@@ -25,15 +25,26 @@ export interface IServerSideProps {
 
 const Home: NextPage<IServerSideProps> = ({ tableData, blogPosts }) => {
   const [showModal, setShowModal] = useState(false);
+  const [filters, setFilters] = useState([
+    "Two-factor Authentication",
+    "Instant Verification",
+    "Accept fiat currency",
+    "Affiliate Program",
+  ]);
 
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   return (
     <div className="container">
       <div className="app-header">
         <Header />
         <Hero />
-        <Filters />
+        <Filters
+          filters={filters}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+        />
         <CurrenciesList />
-        <Table data={tableData} />
+        <Table data={tableData} selectedFeatures={selectedFilters} />
         <BlogPosts blogPosts={blogPosts} />
         <GetInTouch setShowModal={setShowModal} />
         {showModal && <ModalContact setShowModal={setShowModal} />}

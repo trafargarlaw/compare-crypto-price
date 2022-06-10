@@ -4,8 +4,9 @@ import { IServerSideProps } from "../pages";
 
 interface TableProps {
   data: IServerSideProps["tableData"];
+  selectedFeatures: string[];
 }
-const Table: React.FC<TableProps> = ({ data }) => {
+const Table: React.FC<TableProps> = ({ data, selectedFeatures }) => {
   const addComma = (value: number) => {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -60,6 +61,12 @@ const Table: React.FC<TableProps> = ({ data }) => {
         </thead>
         <tbody className="table-body">
           {data
+            .filter((value) => {
+              // check if value.features includes all the selected features
+              return selectedFeatures.every((feature) =>
+                value.features.includes(feature)
+              );
+            })
             .sort((a, b) =>
               isDescending ? b[sortBy] - a[sortBy] : a[sortBy] - b[sortBy]
             )
