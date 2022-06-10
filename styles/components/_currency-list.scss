@@ -1,0 +1,17 @@
+.currency-list-container {
+  margin: 0 clamp(2.5rem, -2.5rem + 10.4167vw, 6.875rem);
+  background: black;
+}
+
+.currency-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 68px;
+
+  &__item {
+    z-index: 1;
+    &.active {
+      z-index: 0;
+    }
+  }
+}

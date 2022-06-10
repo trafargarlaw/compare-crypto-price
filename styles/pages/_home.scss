@@ -1,0 +1,10 @@
+.container {
+  background-image: linear-gradient(
+      360deg,
+      #fefefe 0%,
+      rgba(254, 254, 254, 0) 100%
+    ),
+    url("/images/hero-bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}

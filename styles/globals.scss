@@ -1,0 +1,15 @@
+@import "./abstract/variables.scss";
+
+@import "./base/_reset.scss";
+@import "./base/_typography.scss";
+
+@import "./components/_hero.scss";
+@import "./components/_header.scss";
+@import "./components/_filters.scss";
+@import "./components/_buttons.scss";
+@import "./components/_currency-list.scss";
+@import "./components/_table.scss";
+@import "./components/_blogposts.scss";
+@import "./components/_get-in-touch.scss";
+
+@import "./pages/_home.scss";

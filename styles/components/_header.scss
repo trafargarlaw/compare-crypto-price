@@ -1,0 +1,17 @@
+.app-header {
+  width: 100%;
+
+  & header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    font-size: $font-16-12;
+  }
+}
+
+.link-contact {
+  font-family: "Millimetre";
+  border-bottom: 5px solid $cyan;
+}

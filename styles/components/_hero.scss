@@ -1,0 +1,25 @@
+.hero {
+  display: flex;
+  padding-left: clamp(4.375rem, -4.1964rem + 17.8571vw, 11.875rem);
+  align-items: center;
+  column-gap: clamp(3.1875rem, 0.5407rem + 5.5142vw, 5.5rem);
+  margin-bottom: 76px;
+
+  &__coin-img {
+    flex-direction: column;
+    display: flex;
+    width: clamp(7.375rem, 1.3036rem + 12.6488vw, 12.6875rem);
+  }
+
+  & h1 {
+    font-family: "Millimetre";
+    font-weight: 500;
+    font-size: $font-76-40;
+  }
+
+  & p {
+    font-family: "Roboto Mono", monospace;
+    font-size: $font-25-16;
+    max-width: 48ch;
+  }
+}

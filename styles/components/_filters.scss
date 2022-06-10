@@ -1,0 +1,50 @@
+.filters-container {
+  padding: 0 clamp(2.5rem, -3.7951rem + 13.1148vw, 8rem);
+  display: flex;
+  gap: clamp(2.1875rem, 0.8283rem + 2.8316vw, 3.375rem);
+
+  & .filters {
+    width: 100%;
+    &__header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      & :last-child {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      line-height: 150%;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      & button {
+        font-family: "Roboto Mono";
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      & li {
+        background: #f5f5f5;
+        padding: clamp(0.25rem, 0.1071rem + 0.2976vw, 0.375rem)
+          clamp(0.625rem, 0.1958rem + 0.8942vw, 1rem);
+
+        &.selected-filter {
+          background: $cyan;
+        }
+      }
+    }
+  }
+}
+.label {
+  font-family: "Roboto Mono";
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-size: $font-16-12;
+}
