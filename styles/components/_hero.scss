@@ -9,17 +9,40 @@
     flex-direction: column;
     display: flex;
     width: clamp(7.375rem, 1.3036rem + 12.6488vw, 12.6875rem);
+    aspect-ratio: 1/2; // makes the images container have a little more height than the images themselves to avoid glitches when switching between images
   }
 
-  & h1 {
-    font-family: "Millimetre";
-    font-weight: 500;
-    font-size: $font-76-40;
-  }
+  &__text {
+    & h1 {
+      font-family: "Millimetre";
+      font-weight: 500;
+      font-size: $font-76-40;
+    }
 
-  & p {
-    font-family: "Roboto Mono", monospace;
-    font-size: $font-25-16;
-    max-width: 48ch;
+    & p {
+      font-family: "Roboto Mono", monospace;
+      font-size: $font-25-16;
+      max-width: 48ch;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 0 1.5rem;
+    text-align: center;
+    margin-bottom: 46px;
+
+    &__text {
+      & h1 {
+        font-size: 26px;
+      }
+
+      & p {
+        max-width: 43ch;
+        font-size: 1rem;
+      }
+    }
   }
 }

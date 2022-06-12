@@ -1,12 +1,27 @@
 import Image from "next/image";
 import React from "react";
+import BTC from "../public/images/BTC.png";
+import ETH from "../public/images/ETH.png";
+import LTC from "../public/images/LTC.png";
+import XRP from "../public/images/XRP.png";
 
-const Hero = () => {
+interface HeroProps {
+  selectedCurrency: "BTC" | "ETH" | "LTC" | "XRP";
+}
+
+const Hero: React.FC<HeroProps> = ({ selectedCurrency }) => {
+  let currencyImages = {
+    BTC,
+    ETH,
+    LTC,
+    XRP,
+  };
+
   return (
-    <div className="hero">
+    <section className="hero">
       <div className="hero__coin-img">
         <div>
-          <Image src="/images/BTC.svg" height={287} width={174} alt="coin" />
+          <Image src={BTC} alt="coin" />
         </div>
         <div>
           <Image
@@ -17,7 +32,7 @@ const Hero = () => {
           />
         </div>
       </div>
-      <div>
+      <article className="hero__text">
         <h1>
           Look For the best <br /> Australian Crypto Price
         </h1>
@@ -25,8 +40,8 @@ const Hero = () => {
           Compare the rates on Australian cryptocurrency exchanges to find best
           offers
         </p>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

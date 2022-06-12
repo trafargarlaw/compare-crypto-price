@@ -48,3 +48,15 @@
   letter-spacing: 0.3px;
   font-size: $font-16-12;
 }
+
+@media (max-width: 768px) {
+  .filters-container {
+    justify-content: center;
+    & .filters {
+      display: none;
+    }
+  }
+  .label {
+    display: none;
+  }
+}

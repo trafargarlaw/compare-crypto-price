@@ -15,7 +15,7 @@ const Table: React.FC<TableProps> = ({ data, selectedFeatures }) => {
   const [isDescending, setIsDescending] = useState(true);
 
   return (
-    <div className="table-container">
+    <article className="table-container">
       <table className="table">
         <thead className="table-head">
           <tr className="table-head__row">
@@ -74,10 +74,13 @@ const Table: React.FC<TableProps> = ({ data, selectedFeatures }) => {
               <tr className="table-body__row" key={index}>
                 <td>
                   <div className="image-label">
-                    <img
-                      src={`/images/${item.exchange}.png`}
-                      alt={item.exchange}
-                    />
+                    <div className="image-label_img">
+                      <Image
+                        src={`/images/${item.exchange}.png`}
+                        alt={item.exchange}
+                        layout="fill"
+                      />
+                    </div>
                     <span>{item.exchange}</span>
                   </div>
                 </td>
@@ -101,7 +104,7 @@ const Table: React.FC<TableProps> = ({ data, selectedFeatures }) => {
             ))}
         </tbody>
       </table>
-    </div>
+    </article>
   );
 };
 

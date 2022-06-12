@@ -81,3 +81,16 @@
   font-weight: 600;
   font-family: "Millimetre";
 }
+
+@media (max-width: 768px) {
+  .btn-select-currency {
+    border: none;
+
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .btn-currency-list {
+    padding: 11px 11px;
+  }
+}

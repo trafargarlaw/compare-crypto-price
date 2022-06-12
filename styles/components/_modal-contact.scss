@@ -1,6 +1,6 @@
 .modal {
   background: white;
-  padding: 57px;
+  padding: clamp(2.125rem, 1.6188rem + 2.1596vw, 3.5625rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,8 +9,8 @@
 
   & .close-btn {
     position: absolute;
-    top: 0;
-    right: -40px;
+    top: -30px;
+    right: 8px;
     background: none;
     border: none;
   }
@@ -29,7 +29,7 @@
   }
 
   & h1 {
-    font-size: 40px;
+    font-size: $font-40-25;
     font-family: "Millimetre";
     font-weight: 400;
     align-self: flex-start;
@@ -39,7 +39,7 @@
   &__form {
     display: grid;
     grid-template-rows: 1fr 4fr;
-    width: 485px;
+    width: clamp(16.5rem, 11.6364rem + 20.7512vw, 30.3125rem);
 
     &_email {
       padding: 15px 21px;

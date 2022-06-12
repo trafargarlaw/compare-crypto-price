@@ -33,18 +33,28 @@ const Home: NextPage<IServerSideProps> = ({ tableData, blogPosts }) => {
   ]);
 
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+
+  const [selectedCurrency, setSelectedCurrency] = useState<
+    "BTC" | "ETH" | "LTC" | "XRP"
+  >("BTC");
+
   return (
     <div className="container">
       <div className="app-header">
         <Header />
-        <Hero />
-        <Filters
-          filters={filters}
-          selectedFilters={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
-        />
-        <CurrenciesList />
-        <Table data={tableData} selectedFeatures={selectedFilters} />
+        <Hero selectedCurrency={selectedCurrency} />
+        <section>
+          <Filters
+            filters={filters}
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+          />
+          <CurrenciesList
+            selectedCurrency={selectedCurrency}
+            setSelectedCurrency={setSelectedCurrency}
+          />
+          <Table data={tableData} selectedFeatures={selectedFilters} />
+        </section>
         <BlogPosts blogPosts={blogPosts} />
         <GetInTouch setShowModal={setShowModal} />
         {showModal && <ModalContact setShowModal={setShowModal} />}

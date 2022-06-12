@@ -7,7 +7,7 @@ interface BlogPostsProps {
 
 const BlogPosts: React.FC<BlogPostsProps> = ({ blogPosts }) => {
   return (
-    <>
+    <section>
       <div className="blog-posts">
         <h1>Whats up in Australian Crypto</h1>
         {blogPosts.map((post, index) => (
@@ -21,7 +21,7 @@ const BlogPosts: React.FC<BlogPostsProps> = ({ blogPosts }) => {
       <div className="blog-posts__more">
         <a href="#">SEE MORE</a>
       </div>
-    </>
+    </section>
   );
 };
 

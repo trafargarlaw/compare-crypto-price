@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { Dispatch, SetStateAction, useRef } from "react";
-import { useClickOutside } from "../utils/hooks/useClickOutside";
+import ballShadow from "../public/images/ball-shadow.png";
+import ball from "../public/images/ball.png";
 
 interface GetInTouchProps {
   setShowModal: Dispatch<SetStateAction<boolean>>;
@@ -7,7 +9,7 @@ interface GetInTouchProps {
 
 const GetInTouch: React.FC<GetInTouchProps> = ({ setShowModal }) => {
   return (
-    <div className="get-in-touch">
+    <footer className="get-in-touch">
       <div className="get-in-touch__title">
         <h1>Got feedback? We got you!</h1>
         <button className="btn-get-in-touch" onClick={() => setShowModal(true)}>
@@ -16,13 +18,13 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ setShowModal }) => {
       </div>
       <div className="get-in-touch__ball-and-shadow">
         <div className="get-in-touch__ball-and-shadow_ball">
-          <img src="/images/ball.png" alt="ball" />
+          <Image src={ball} alt="ball" />
         </div>
         <div className="get-in-touch__ball-and-shadow_shadow">
-          <img src="/images/ball-shadow.png" alt="ball" />
+          <Image src={ballShadow} alt="ball" />
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
