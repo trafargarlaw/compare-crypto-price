@@ -184,6 +184,11 @@
               display: flex;
               align-items: center;
               column-gap: 1rem;
+              flex-direction: row;
+
+              & button {
+                display: none;
+              }
 
               &_img {
                 position: relative;
