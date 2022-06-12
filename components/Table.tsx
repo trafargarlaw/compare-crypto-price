@@ -82,6 +82,7 @@ const Table: React.FC<TableProps> = ({ data, selectedFeatures }) => {
                       />
                     </div>
                     <span>{item.exchange}</span>
+                    <button>Buy</button>
                   </div>
                 </td>
                 <td>
